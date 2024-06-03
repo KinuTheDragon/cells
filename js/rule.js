@@ -25,8 +25,10 @@ class StartState {
 
     static fromText(text, mapping) {
         let index = null;
-        if (text.includes("@"))
-            [text, index] = text.match(/^([^@]+)@(.*)$/).slice(1);
+        if (text.includes("@")) {
+            [text, index] = text.match(/^([^@]*)@(.*)$/).slice(1);
+            if (!text) text = "*";
+        }
         let matchesVoid = false;
         if (text.endsWith("?")) {
             matchesVoid = true;
@@ -100,9 +102,8 @@ class Rule {
                     return false;
                 if (startState.index !== null) {
                     let cellType = grid.getCell(gridRow, gridCol);
-                    if (startState.index in indexed)
-                        if (indexed[startState.index] !== cellType) return false;
-                    else indexed[startState.index] = cellType;
+                    indexed[startState.index] ??= cellType;
+                    if (indexed[startState.index] !== cellType) return false;
                 }
             }
         }
@@ -157,7 +158,7 @@ class Rule {
             this.#startState.map(row => row.toReversed()),
             this.#endState.map(row => row.toReversed()),
             this.#data
-        );
+        );t
     }
 
     get flippedVertically() {
