@@ -1,5 +1,9 @@
+const LT = "\ue000";
+const GT = "\ue001";
+const AMP = "\ue002";
+
 const HIGHLIGHTS = [
-    ["=&gt;", "arrow"],
+    ["=" + GT, "arrow"],
     ["#[0-9A-Fa-f]{3,6}", "color"],
     [":=", "defined"],
     ["\\w*:\\S*", "tag"],
@@ -45,8 +49,15 @@ function highlight(code) {
 }
 
 function highlightCode() {
-    let html = codeArea.innerHTML;
+    let html = codeArea.innerHTML
+        .replaceAll("&lt;", LT)
+        .replaceAll("&gt;", GT)
+        .replaceAll("&amp;", AMP);
     html = highlight(html);
-    highlighted.innerHTML = html.replaceAll("<br>", "");
+    highlighted.innerHTML = html
+        .replaceAll("<br>", "")
+        .replaceAll(LT, "&lt;")
+        .replaceAll(GT, "&gt;")
+        .replaceAll(AMP, "&amp;");
     highlighted.scrollTop = codeArea.scrollTop;
 }
