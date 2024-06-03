@@ -204,15 +204,15 @@ class Rule {
             ...endGrid.map(x => x.length)
         );
         startGrid = startGrid.map(
-            row => row.concat(new Array(cols - row.length).fill("*"))
+            row => row.concat(new Array(cols - row.length).fill("*?"))
         );
         while (startGrid.length < rows)
-            startGrid.push(new Array(cols).fill("*"));
+            startGrid.push(new Array(cols).fill("*?"));
         endGrid = endGrid.map(
-            row => row.concat(new Array(cols - row.length).fill("*"))
+            row => row.concat(new Array(cols - row.length).fill("*?"))
         );
         while (endGrid.length < rows)
-            endGrid.push(new Array(cols).fill("*"));
+            endGrid.push(new Array(cols).fill("*?"));
         return new this(
             startGrid.map(
                 row => row.map(
