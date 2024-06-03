@@ -61,4 +61,5 @@ function highlightCode() {
         .replaceAll(GT, "&gt;")
         .replaceAll(AMP, "&amp;");
     highlighted.scrollTop = codeArea.scrollTop;
+    highlighted.scrollLeft = codeArea.scrollLeft;
 }
