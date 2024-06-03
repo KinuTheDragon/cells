@@ -1,0 +1,135 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    color: #fff;
+    overflow-y: hidden;
+}
+
+#canvas {
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#editor {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+}
+
+#buttonpanel {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 10%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#buttonpanel button {
+    height: 100%;
+    width: 33.333%;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #888;
+}
+
+#buttonpanel button img {
+    height: 100%;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+#code {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 70%;
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    outline: none;
+    white-space: pre;
+    font-family: Courier New, monospace;
+    overflow-y: auto;
+    z-index: 1;
+    color: transparent;
+    caret-color: #fff;
+}
+
+#code-highlighted {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 70%;
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    outline: none;
+    white-space: pre;
+    font-family: Courier New, monospace;
+    overflow-y: hidden;
+    background-color: #224;
+}
+
+#log {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 20%;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    outline: none;
+    white-space: pre;
+    font-family: Courier New, monospace;
+    background-color: #444;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.highlight-arrow {
+    color: #8800ff;
+}
+
+.highlight-color {
+    color: #ff00ff;
+}
+
+.highlight-symbol {
+    color: #0f0;
+}
+
+.highlight-index {
+    color: #f80;
+}
+
+.highlight-name {
+    color: #0ff;
+}
+
+.highlight-tag {
+    color: #ff0;
+}
+
+.highlight-grouping {
+    color: #f00;
+}
+
+.highlight-defined {
+    color: #08f;
+}

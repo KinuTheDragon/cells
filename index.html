@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Cells</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <canvas id="canvas"></canvas><!--
+        --><div id="editor"><!--
+            --><div id="buttonpanel"><!--
+                --><button onclick="updateCode()"><img src="images/update.png"></img></button><!--
+                --><button onclick="togglePaused()" id="pause"><img src="images/pause.png"></img></button><!--
+                --><button onclick="step()"><img src="images/step.png"></img></button><!--
+            --></div><br/><div contenteditable="plaintext-only"
+                   id="code"
+                   spellcheck="false"></div><!--
+            --><div id="code-highlighted"></div><!--
+            --><br/><div id="log"></div><!--
+        --></div>
+        <script src="js/highlight.js"></script>
+        <script src="js/cell_type.js"></script>
+        <script src="js/events.js"></script>
+        <script src="js/grid.js"></script>
+        <script src="js/rule.js"></script>
+        <script src="script.js"></script>
+        <script src="js/initial_content.js"></script>
+    </body>
+</html>
