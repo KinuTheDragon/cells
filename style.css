@@ -36,7 +36,7 @@ html, body {
 
 #buttonpanel button {
     height: 100%;
-    width: 33.333%;
+    width: 25%;
     user-select: none;
     margin: 0;
     padding: 0;
