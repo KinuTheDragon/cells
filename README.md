@@ -16,6 +16,7 @@ by the amazing [Lu Wilson](https://github.com/TodePond/).
 ![image](images/play.png)|Resume the simulation
 ![image](images/step.png)|Do one step of the simulation
 ![image](images/help.png)|Opens this documentation
+![image](images/more.png)|Opens my main site for more cool stuff
 
 ## How do I write code for it?
 The code is divided into 2-3 sections separated by double newlines:

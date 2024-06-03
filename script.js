@@ -129,6 +129,10 @@ function openReadme() {
     window.open("https://github.com/KinuTheDragon/cells/blob/main/README.md", "_blank");
 }
 
+function openMore() {
+    window.open("https://kinuthedragon.github.io", "_blank");
+}
+
 setInterval(() => {
     highlightCode();
     if (!grid) return;
