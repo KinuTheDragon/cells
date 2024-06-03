@@ -5,7 +5,11 @@ const codeArea = document.getElementById("code");
 attachEventListeners(canvas);
 
 function mainUpdateCode() {
-    let code = codeArea.innerText;
+    if (!code) {
+        errors.push("Must have at least one element");
+        return;
+    }
+    let code = codeArea.innerText.trim();
     let parts = code.split("\n\n");
     let elements = parts.shift().split("\n").map(x => x.trim());
     let originalElements = elements.map(x => x);
