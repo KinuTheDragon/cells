@@ -178,6 +178,8 @@ class Rule {
     }
 
     static fromText(text, mapping) {
+        const DEFAULT_START = "*?";
+        const DEFAULT_END = "*";
         let errorText = ("\n" + text).replaceAll("\n", "\n    ");
         if (!text.includes("=>"))
             throw "Invalid rule (no =>):" + errorText;
@@ -204,15 +206,15 @@ class Rule {
             ...endGrid.map(x => x.length)
         );
         startGrid = startGrid.map(
-            row => row.concat(new Array(cols - row.length).fill("*?"))
+            row => row.concat(new Array(cols - row.length).fill(DEFAULT_START))
         );
         while (startGrid.length < rows)
-            startGrid.push(new Array(cols).fill("*?"));
+            startGrid.push(new Array(cols).fill(DEFAULT_START));
         endGrid = endGrid.map(
-            row => row.concat(new Array(cols - row.length).fill("*?"))
+            row => row.concat(new Array(cols - row.length).fill(DEFAULT_END))
         );
         while (endGrid.length < rows)
-            endGrid.push(new Array(cols).fill("*?"));
+            endGrid.push(new Array(cols).fill(DEFAULT_END));
         return new this(
             startGrid.map(
                 row => row.map(
