@@ -52,7 +52,8 @@ function highlightCode() {
     let html = codeArea.innerHTML
         .replaceAll("&lt;", LT)
         .replaceAll("&gt;", GT)
-        .replaceAll("&amp;", AMP);
+        .replaceAll("&amp;", AMP)
+        .replaceAll("<br>", "");
     html = highlight(html);
     highlighted.innerHTML = html
         .replaceAll("<br>", "")
