@@ -18,20 +18,29 @@ by the amazing [Lu Wilson](https://github.com/TodePond/).
 ![image](images/help.png)|Opens this documentation
 ![image](images/more.png)|Opens my main site for more cool stuff
 
+## Canvas controls
+- Press a key listed in the Elements section to select that element for your brush.
+- Left-click to place the selected element.
+- Right-click to delete cells.
+- Middle-click to select the hovered cell's element.
+- Scroll to change the brush size.
+
 ## How do I write code for it?
-The code is divided into 2-3 sections separated by double newlines:
+The code is divided into 1-3 sections separated by double newlines:
 ### Elements
 Each line of this section is in the format
 <code>&lt;name&gt; &lt;key&gt; &lt;color&gt;</code>.
 The <code>name</code> is the name of the element,
 the <code>key</code> is the [key to press to access it,](https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values)
 and the <code>color</code> is a [CSS color](https://www.w3schools.com/css/css_colors.asp).
+The first one listed is the one that will be used as the
+element to fill the grid with initially.
 ### Replacements (optional)
 Each line of this section is in the format
 <code>&lt;start&gt; := &lt;end&gt;</code>.
 This replaces the <code>start</code> with <code>end</code>
 in the rules section.
-### Rules
+### Rules (optional)
 The rules within this section are separated by double newlines.
 Their format is best explained with examples.
 #### Simple example
