@@ -86,6 +86,42 @@ setTimeout(() => {
     updateCode();
 }, 100);
 
+// https://stackoverflow.com/a/64001839
+function insertTextAtSelection(div, txt) {
+    //get selection area so we can position insert
+    let sel = window.getSelection();
+    let text = div.textContent;
+    let before = Math.min(sel.focusOffset, sel.anchorOffset);
+    let after = Math.max(sel.focusOffset, sel.anchorOffset);
+    //ensure string ends with \n so it displays properly
+    let afterStr = text.substring(after);
+    if (afterStr == "") afterStr = "\n";
+    //insert content
+    div.textContent = text.substring(0, before) + txt + afterStr;
+    //restore cursor at correct position
+    sel.removeAllRanges();
+    let range = document.createRange();
+    //childNodes[0] should be all the text
+    range.setStart(div.childNodes[0], before + txt.length);
+    range.setEnd(div.childNodes[0], before + txt.length);
+    sel.addRange(range);
+}
+
+codeArea.addEventListener("keydown", e => {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        e.stopPropagation();
+        insertTextAtSelection(codeArea, "\n");
+    }
+});
+
+codeArea.addEventListener("paste", e => {
+    e.preventDefault();
+    let text = (e.originalEvent || e).clipboardData.getData("text/plain");
+    insertTextAtSelection(codeArea, text);
+});
+// end stackoverflow
+
 let grid, mapping, selected, selectable, defaultType;
 let errors = [];
 

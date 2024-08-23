@@ -158,7 +158,7 @@ class Rule {
             this.#startState.map(row => row.toReversed()),
             this.#endState.map(row => row.toReversed()),
             this.#data
-        );t
+        );
     }
 
     get flippedVertically() {
