@@ -22,6 +22,7 @@ function mainUpdateCode() {
         }
     }
     if (errors.length) return;
+    let replacementsMap = {};
     if (parts.length) {
         let replacements = parts.shift();
         if (replacements.includes(":=")) {
@@ -39,6 +40,7 @@ function mainUpdateCode() {
             }
             if (errors.length) return;
             replacements.sort((x, y) => y[0].length - x[0].length);
+            replacementsMap = Object.fromEntries(replacements);
             for (let [start, end] of replacements) {
                 parts = parts.map(x => x.replaceAll(start, end));
             }
@@ -54,7 +56,9 @@ function mainUpdateCode() {
         if (!selected) selected = key;
     }
     defaultType = mapping[elements[0][0]];
-    grid = new Grid(50, 50, defaultType);
+    let size = +replacementsMap.SIZE;
+    if (isNaN(size)) size = 50;
+    grid = new Grid(size, size, defaultType);
     for (let ruleText of parts) {
         try {
             grid.addRule(Rule.fromText(ruleText, mapping));

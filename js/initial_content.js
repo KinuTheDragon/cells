@@ -9,6 +9,7 @@ virus 6 #f0f
 rock 7 #888
 lava 8 #400
 
+SIZE := 100
 falls := [sand virus water rock lava]
 fallinto := [water lava air steam fire]
 sandlike := [sand virus]

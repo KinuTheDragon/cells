@@ -40,6 +40,11 @@ Each line of this section is in the format
 <code>&lt;start&gt; := &lt;end&gt;</code>.
 This replaces the <code>start</code> with <code>end</code>
 in the rules section.
+#### Special replacements
+Replacing certain things has special effects.
+**Name**|**Result**
+:-----:|:-----:
+SIZE|Changes the size of the grid. Defaults to 50.
 ### Rules (optional)
 The rules within this section are separated by double newlines.
 Their format is best explained with examples.
