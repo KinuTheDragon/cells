@@ -57,7 +57,7 @@ steam
 air
 
 sym:r
-virus,![wall air] => *,virus
+virus,![wall air virus] => *,virus
 
 air
 lava
